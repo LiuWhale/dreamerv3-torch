@@ -193,6 +193,11 @@ def make_env(config, mode, id):
 
         env = minecraft.make_env(task, size=config.size, break_speed=config.break_speed)
         env = wrappers.OneHotAction(env)
+    elif suite == "mujoco":
+        import envs.mujoco as mujoco
+
+        env = mujoco.Mujoco(task, config.action_repeat, config.size, seed=config.seed + id)
+        env = wrappers.NormalizeActions(env)
     else:
         raise NotImplementedError(suite)
     env = wrappers.TimeLimit(env, config.time_limit)
