@@ -7,7 +7,7 @@ class Mujoco:
     def __init__(self, env_name="hopper", action_repeat=1, size=(64, 64), seed=0):
         if env_name == "hopper":
             env_name = "Hopper-v3"
-        elif env_name == "halfcheetah":
+        elif env_name == "cheetah":
             env_name = "HalfCheetah-v3"
         self._env = gym.make(env_name, render_mode="rgb_array")
         self.seed = seed
