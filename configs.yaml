@@ -5,7 +5,7 @@ defaults:
   evaldir: null
   offline_traindir: ''
   offline_evaldir: ''
-  seed: 1
+  seed: 0
   deterministic_run: False
   steps: 1e6
   parallel: False
@@ -93,7 +93,7 @@ defaults:
   disag_units: 400
   disag_action_cond: False
 
-mujoco:
+mujoco: # mujuco_hopper mujoco_cheetah
   steps: 9e99
   action_repeat: 1
   envs: 1
