@@ -100,7 +100,7 @@ mujoco: # mujuco_hopper mujoco_cheetah
   train_ratio: 128
   batch_size: 8
   batch_length: 10
-  dataset_size: 500000
+  dataset_size: 1000000
   size: [48, 48]
   video_pred_log: false
   log_vid: false
