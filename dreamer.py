@@ -317,6 +317,7 @@ def main(config):
                 logger,
                 is_eval=True,
                 episodes=config.eval_episode_num,
+                log_vid=config.log_vid,
             )
             if config.video_pred_log:
                 video_pred = agent._wm.video_pred(next(eval_dataset))
@@ -331,6 +332,7 @@ def main(config):
             limit=config.dataset_size,
             steps=config.eval_every,
             state=state,
+            log_vid=config.log_vid,
         )
         items_to_save = {
             "agent_state_dict": agent.state_dict(),

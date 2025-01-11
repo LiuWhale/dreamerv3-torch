@@ -94,15 +94,16 @@ defaults:
   disag_action_cond: False
 
 mujoco: # mujuco_hopper mujoco_cheetah
-  steps: 9e99
+  steps: 1e6
   action_repeat: 1
   envs: 1
   train_ratio: 128
   batch_size: 8
-  batch_length: 32
+  batch_length: 10
   dataset_size: 500000
   size: [48, 48]
   video_pred_log: false
+  log_vid: false
   encoder: {mlp_keys: '.*', cnn_keys: '$^', mlp_layers: 3, mlp_units: 512}
   decoder: {mlp_keys: '.*', cnn_keys: '$^', mlp_layers: 3, mlp_units: 512}
   dyn_hidden: 256

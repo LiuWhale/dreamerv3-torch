@@ -24,8 +24,9 @@ class Mujoco:
             high=self._env.observation_space.high,
             dtype=np.float64
         )
-        spaces = {"state": original_space,
-                "image": gym.spaces.Box(0, 255, self._size + (3,), dtype=np.uint8)}
+        # spaces = {"state": original_space,
+                # "image": gym.spaces.Box(0, 255, self._size + (3,), dtype=np.uint8)}
+        spaces = {"state": original_space}
         return gym.spaces.Dict(spaces)
 
     @property
@@ -42,15 +43,16 @@ class Mujoco:
             if done:
                 break
         # 构造与 dmc 风格相似的 obs 字典
-        obs_dict = {"state": obs, "image": self.render()}
+        # obs_dict = {"state": obs, "image": self.render()}
+        obs_dict = {"state": obs}
         obs_dict["is_first"] = False  # 仅示例，可自行修改
         obs_dict["is_terminal"] = done
         return obs_dict, reward, done, info
 
     def reset(self):
         obs = self._env.reset(seed=self.seed)
-        obs_dict = {"state": obs[0], "image": self.render()}
-        # obs_dict = {"image": self.render()}
+        # obs_dict = {"state": obs[0], "image": self.render()}
+        obs_dict = {"state": obs[0]}
         obs_dict["is_first"] = True
         obs_dict["is_terminal"] = False
         return obs_dict
