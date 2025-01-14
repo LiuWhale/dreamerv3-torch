@@ -97,15 +97,17 @@ mujoco: # mujuco_hopper mujoco_cheetah
   steps: 1e6
   action_repeat: 1
   envs: 1
-  train_ratio: 128
-  batch_size: 8
+  train_ratio: 512
+  batch_size: 16
   batch_length: 10
   dataset_size: 1000000
   size: [48, 48]
   video_pred_log: false
   log_vid: false
-  encoder: {mlp_keys: '.*', cnn_keys: '$^', mlp_layers: 3, mlp_units: 512}
-  decoder: {mlp_keys: '.*', cnn_keys: '$^', mlp_layers: 3, mlp_units: 512}
+  # encoder: {mlp_keys: '.*', cnn_keys: '$^', mlp_layers: 3, mlp_units: 512}
+  # decoder: {mlp_keys: '.*', cnn_keys: '$^', mlp_layers: 3, mlp_units: 512}
+  encoder: {mlp_keys: '.*', cnn_keys: '$^'}
+  decoder: {mlp_keys: '.*', cnn_keys: '$^'}
   dyn_hidden: 256
   dyn_deter: 256
   precision: 16
