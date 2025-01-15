@@ -33,6 +33,7 @@ So far, the following benchmarks can be used for testing.
 | [Crafter](https://github.com/danijar/crafter) | Image | Discrete |1M| Survival environment to evaluates diverse agent abilities.|
 | [Minecraft](https://github.com/minerllabs/minerl) | Image and State |Discrete |100M| Vast 3D open world.|
 | [Memory Maze](https://github.com/jurgisp/memory-maze) | Image |Discrete |100M| 3D mazes to evaluate RL agents' long-term memory.|
+| mujoco| State |Continuous |X| Mujoco envs with low-dimensional inputs.|
 
 ## Results
 #### DMC Proprio
